@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Meme Interactivo</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    #videoContainer {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    video {
+      width: 100%;
+      border: 4px solid white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Yo en cualquier cosa... 😴</h1>
+
+  <div id="videoContainer">
+    <video id="video" autoplay muted loop>
+      <source src="aburrido.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+  </div>
+
+  <div id="mensaje">Haz clic para ver mi modo programador 💻</div>
+
+  <script>
+    const video = document.getElementById("video");
+    const mensaje = document.getElementById("mensaje");
+    const titulo = document.querySelector("h1");
+
+    let modo = "aburrido";
+
+    video.addEventListener("click", () => {
+      if (modo === "aburrido") {
+        video.src = "programando.mp4";
+        video.play();
+        mensaje.innerText = "🔥 Modo programador: ACTIVADO 🔥";
+        titulo.innerText = "Pero cuando programo...";
+        modo = "programando";
+      }
+    });
+  </script>
+
+</body>
+</html>
